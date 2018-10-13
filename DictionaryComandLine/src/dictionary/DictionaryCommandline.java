@@ -27,7 +27,7 @@ public class DictionaryCommandline {
                     + "7: Thoát");
             command = sc.nextInt();
             while (command < 1 || command > 7) {
-                System.out.println("Nhập lại");
+                System.out.println("Nhập lại:");
                 command = sc.nextInt();
             }
             switch (command) {
@@ -66,7 +66,7 @@ public class DictionaryCommandline {
         int fisrt = dictionaryManagement.binarySearchFirstStartWith(str);
         int end = dictionaryManagement.binarySearchEndStartWith(str);
         if (fisrt == -1) {
-            System.out.println("Không tìm thấy dữ liệu phù hợp");
+            System.out.println("Không tìm thấy dữ liệu phù hợp.");
         } else {
             for (int i = fisrt; i <= end; i++) {
                 System.out.print(dictionaryManagement.getDictionary().getWords().get(i).getWord_target());
@@ -95,7 +95,7 @@ public class DictionaryCommandline {
         System.out.println("Nhập 1: Phiên bản Basic\nNhập 2: Phiên bản Advanced");
         int command = sc.nextInt();
         while (command < 1 || command > 2) {
-            System.out.println("Nhập lại");
+            System.out.println("Nhập lại:");
             command = sc.nextInt();
         }
         if (command == 1) {
