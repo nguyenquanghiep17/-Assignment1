@@ -115,18 +115,18 @@ public class DictionaryManagement {
     public void addWord() {
         Scanner sc = new Scanner(System.in);
         Word new_word = new Word();
-        System.out.println("Nhập từ tiếng Anh");
+        System.out.println("Nhập từ tiếng Anh:");
         new_word.setWord_target(sc.nextLine());
-        System.out.println("Nhập giải thích sang tiếng việt");
+        System.out.println("Nhập giải thích sang tiếng việt:");
         new_word.setWord_explain(sc.nextLine());
         int check = binarySearch(new_word.getWord_target());
         if (check == -1) {
             dictionary.getWords().add(new_word);
             sortWords();
             dictionaryExportToFile();
-            System.out.println("Thêm từ thành công");
+            System.out.println("Thêm từ thành công.");
         } else {
-            System.out.println("Từ đã có trong danh sách");
+            System.out.println("Từ đã có trong danh sách.");
         }
     }
 
@@ -136,9 +136,9 @@ public class DictionaryManagement {
         if (check != -1) {
             dictionary.getWords().remove(check);
             dictionaryExportToFile();
-            System.out.println("Xóa từ thành công");
+            System.out.println("Xóa từ thành công.");
         } else {
-            System.out.println("Không tìm thấy từ");
+            System.out.println("Không tìm thấy từ.");
         }
     }
 
@@ -149,23 +149,23 @@ public class DictionaryManagement {
             Word old_word = dictionary.getWords().get(check);
             dictionary.getWords().remove(check);
             Word new_word = new Word();
-            System.out.println("Nhập từ tiếng Anh");
+            System.out.println("Nhập từ tiếng Anh:");
             new_word.setWord_target(sc.nextLine());
-            System.out.println("Nhập giải thích sang tiếng việt");
+            System.out.println("Nhập giải thích sang tiếng việt:");
             new_word.setWord_explain(sc.nextLine());
             int check1 = binarySearch(new_word.getWord_target());
             if (check1 != -1) {
-                System.out.println("Từ đã tồn tại");
+                System.out.println("Từ đã tồn tại.");
                 dictionary.getWords().add(old_word);
                 sortWords();
             } else {
                 dictionary.getWords().add(new_word);
                 dictionaryExportToFile();
                 sortWords();
-                System.out.println("Sủa từ thành công");
+                System.out.println("Sửa từ thành công.");
             }
         } else {
-            System.out.println("Không tìm thấy từ");
+            System.out.println("Không tìm thấy từ.");
         }
     }
 
@@ -183,13 +183,13 @@ public class DictionaryManagement {
 
     public void insertFromCommandline() {
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.println("Nhập vào số từ cần thêm");
+            System.out.println("Nhập vào số từ cần thêm:");
             int number_word = Integer.parseInt(sc.nextLine());
             for (int i = 0; i < number_word; i++) {
                 Word new_word = new Word();
                 System.out.println("Nhập từ tiếng Anh");
                 new_word.setWord_target(sc.nextLine());
-                System.out.println("Nhập giải thích sang tiếng việt");
+                System.out.println("Nhập giải thích sang tiếng việt:");
                 new_word.setWord_explain(sc.nextLine());
                 dictionary.getWords().add(new_word);
             }
